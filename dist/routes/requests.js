@@ -6,10 +6,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const requestRoute = express_1.default.Router();
 requestRoute.get('/', (request, response) => {
+    //console.log(request)
     response.send('GET response');
 });
 requestRoute.post('/', (request, response) => {
-    response.send('POST response');
+    //console.log(request)
+    response.send({ data: 'hello world' });
 });
 exports.default = requestRoute;
 //# sourceMappingURL=requests.js.map

@@ -8,7 +8,7 @@ const requests_1 = __importDefault(require("./routes/requests"));
 const app = express_1.default();
 const port = 3000;
 app.use('/requests', requests_1.default);
-app.listen(3000, () => {
-    console.log('Listening');
+app.listen(port, () => {
+    console.log('Listening on port:', port);
 });
 //# sourceMappingURL=index.js.map
