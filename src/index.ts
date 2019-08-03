@@ -1,12 +1,11 @@
 import express from 'express'
+import requestRoute from './routes/requests'
 
 const app = express()
 const port = 3000
 
-app.get('/', (request, response) => {
-    response.send('Hello World')
-})
+app.use('/requests', requestRoute)
 
-app.listen(port, () => {
-    console.log('Listening on port: ', port)
+app.listen(3000, () => {
+    console.log('Listening')
 })
