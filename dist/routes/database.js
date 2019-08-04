@@ -14,4 +14,4 @@ requestRoute.post('/', (request, response) => {
     response.send({ data: 'hello world' });
 });
 exports.default = requestRoute;
-//# sourceMappingURL=requests.js.map
+//# sourceMappingURL=database.js.map

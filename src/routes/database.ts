@@ -1,6 +1,10 @@
 import express from 'express'
+import mysql from 'mysql'
+
 
 const requestRoute = express.Router()
+
+
 
 requestRoute.get('/', (request, response) => {
     //console.log(request)
@@ -13,3 +17,4 @@ requestRoute.post('/', (request, response) => {
 })
 
 export default requestRoute
+
