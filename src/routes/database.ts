@@ -1,6 +1,5 @@
 import express from 'express'
-import mysql from 'mysql'
-
+import * as SQL from '../utili/sqlFunctions'
 
 const requestRoute = express.Router()
 
@@ -12,7 +11,12 @@ requestRoute.get('/', (request, response) => {
 })
 
 requestRoute.post('/', (request, response) => {
-    console.log(request.body)
+    switch(request.body.type){
+        
+        default: 
+            response.send("invalid requests")
+    }
+
     response.send({data: 'hello world'})
 })
 

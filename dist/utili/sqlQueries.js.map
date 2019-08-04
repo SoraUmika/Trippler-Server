@@ -1,1 +1,1 @@
-{"version":3,"file":"sqlQueries.js","sourceRoot":"","sources":["../../src/utili/sqlQueries.ts"],"names":[],"mappings":""}
+{"version":3,"file":"sqlQueries.js","sourceRoot":"","sources":["../../src/utili/sqlQueries.ts"],"names":[],"mappings":";;AACa,QAAA,iBAAiB,GAAG,0FAA0F,CAAA;AAC9G,QAAA,iBAAiB,GAAG,wFAAwF,CAAA;AAC5G,QAAA,eAAe,GAAG,qFAAqF,CAAA;AACvG,QAAA,iBAAiB,GAAG,wFAAwF,CAAA;AAC5G,QAAA,kBAAkB,GAAG,4FAA4F,CAAA;AAEjH,QAAA,gBAAgB,GAAG,kEAAkE,CAAC"}

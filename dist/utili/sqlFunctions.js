@@ -11,8 +11,18 @@ const SQL = mysql_1.default.createPool({
     port: 3306,
     database: 'MainTripplar'
 });
-const insert_new_user = (crendentials) => {
+exports.insert_new_user = (crendentials) => {
     SQL.getConnection((err, connections) => {
+    });
+};
+exports.login_authentication = (credentials) => {
+};
+exports.grab_random_business = () => {
+    SQL.query("SELECT * From Businesses ORDER BY Rand() LIMIT 1;", (err, result) => {
+        if (err) {
+            console.error(err);
+        }
+        console.log("Success");
     });
 };
 //# sourceMappingURL=sqlFunctions.js.map
