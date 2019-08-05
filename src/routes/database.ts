@@ -1,24 +1,37 @@
 import express from 'express'
-import * as SQL from '../utili/sqlFunctions'
+import expressip from 'express-ip'
+import {grab_random_business} from '../utili/sqlFunctions'
+const databaseRoute = express.Router()
 
-const requestRoute = express.Router()
+databaseRoute.use(expressip().getIpInfoMiddleware)
 
-
-
-requestRoute.get('/', (request, response) => {
+databaseRoute.get('/', (request, response) => {
     //console.log(request)
     response.send('GET response')
 })
 
-requestRoute.post('/', (request, response) => {
+databaseRoute.post('/', (request, response) => {
     switch(request.body.type){
-        
+        case 'sampleType':
+            console.log('its sampleType')
+            response.send({data: 'this is sample'})
+            break;
+        case 'grab_random_bussiness':
+            grab_random_business((err, result) => {
+                if (err){
+                    response.send({ErrorFromServer: "Requests received, but is unable to retrive data from server database"})
+                }else{
+                    console.log("sending_packings to: ", request.headers['x-forwarded-for'] || request.connection.remoteAddress) 
+                    response.send(result)
+                }
+            })
+            break;
         default: 
-            response.send("invalid requests")
+            console.log('database post requests: FAILED TO REGONIZE DATA')
+            response.send({err: 'FAILED TO RECOGNIZE THE DATA'})
     }
 
-    response.send({data: 'hello world'})
 })
 
-export default requestRoute
+export default databaseRoute
 

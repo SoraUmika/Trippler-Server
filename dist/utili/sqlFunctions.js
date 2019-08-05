@@ -17,12 +17,9 @@ exports.insert_new_user = (crendentials) => {
 };
 exports.login_authentication = (credentials) => {
 };
-exports.grab_random_business = () => {
+exports.grab_random_business = (callback) => {
     SQL.query("SELECT * From Businesses ORDER BY Rand() LIMIT 1;", (err, result) => {
-        if (err) {
-            console.error(err);
-        }
-        console.log("Success");
+        callback(err, result);
     });
 };
 //# sourceMappingURL=sqlFunctions.js.map
