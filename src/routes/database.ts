@@ -28,7 +28,7 @@ databaseRoute.post('/', (request, response) => {
             break;
         default: 
             console.log('database post requests: FAILED TO REGONIZE DATA')
-            response.send({err: 'FAILED TO RECOGNIZE THE DATA'})
+            response.send({err: 'requests received, BUT FAILED TO RECOGNIZE THE REQUEST, PLEASE CHECK THE TYPE'})
     }
 
 })
