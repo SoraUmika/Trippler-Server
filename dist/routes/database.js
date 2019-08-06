@@ -21,7 +21,7 @@ databaseRoute.post('/', (request, response) => {
         case 'grab_random_bussiness':
             sqlFunctions_1.grab_random_business((err, result) => {
                 if (err) {
-                    response.send({ ErrorFromServer: "Requests received, but is unable to retrive data from server database" });
+                    response.send({ ErrorFromServer: "Requests received, but is unable to retrieve data from server database" });
                 }
                 else {
                     console.log("sending_packings to: ", request.headers['x-forwarded-for'] || request.connection.remoteAddress);
@@ -31,7 +31,7 @@ databaseRoute.post('/', (request, response) => {
             break;
         default:
             console.log('database post requests: FAILED TO REGONIZE DATA');
-            response.send({ err: 'FAILED TO RECOGNIZE THE DATA' });
+            response.send({ err: 'requests received, BUT FAILED TO RECOGNIZE THE REQUEST, PLEASE CHECK THE TYPE' });
     }
 });
 exports.default = databaseRoute;

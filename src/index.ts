@@ -14,10 +14,10 @@ app.use(express.json());
 app.use('/database', databaseRoute)
 app.use('/requests', requestRoute)
 
-https.createServer({
-  key: fs.readFileSync('server.key'),
-  cert: fs.readFileSync('server.cert')
-}, app)
+//https.createServer({
+//  key: fs.readFileSync('server.key'),
+//  cert: fs.readFileSync('server.cert')
+//}, app)
 
 app.listen(port, () => {
     console.log('Listening on port:', port)
